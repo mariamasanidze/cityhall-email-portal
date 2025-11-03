@@ -1,0 +1,85 @@
+/* Full container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: #f8fbff;
+}
+
+/* Top header area (your Header component renders here) */
+/* .dashboard-header-bar {
+  height: 72px;
+} */
+
+/* Main Layout */
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  background: #f8fbff;
+}
+
+/* Sidebar Panel */
+ .sidebar {
+  width: 360px;
+  background: #fff;
+  border-right: 1px solid #e4e9f2;
+   padding: 20px; 
+  overflow-y: auto;
+} 
+
+/* Search box */
+.sidebar input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-left: 12px;
+  width: calc(100% - 50px); 
+  border-radius: 10px;
+  border: 1px solid #d2d9e5;
+  background: #f8faff;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* Empty Email Panel */
+.empty-email-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3fb;
+  color: #5c667a;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.empty-email-panel small {
+  display: block;
+  margin-top: 6px;
+  color: #7b8798;
+  font-size: 13px;
+}
+
+/* Loading & Error panels */
+.center-panel,
+.error-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-panel {
+  background: #ffe6e6;
+  border: 1px solid #ffb3b3;
+  color: #b00000;
+  padding: 16px;
+  border-radius: 6px;
+}

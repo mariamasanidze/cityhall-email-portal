@@ -1,6 +1,6 @@
 export default function Inbox({ emails, onSelect }) {
   return (
-    <div className="inbox">
+    <div className="sidebar">
       <input type="text" placeholder="Search emails..." />
 
       <ul>
