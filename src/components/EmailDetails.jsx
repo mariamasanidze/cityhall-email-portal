@@ -1,29 +1,3 @@
-// import { useState } from "react";
-// import ResponseModal from "./ResponseModal";
-
-// export default function EmailDetails({ email }) {
-//   const [modalType, setModalType] = useState(null);
-
-//   if (!email) return <div className="placeholder">Select an email to view details</div>;
-
-//   return (
-//     <div className="email-details">
-//       <h2>{email.subject}</h2>
-//       <p><strong>From:</strong> {email.sender}</p>
-//       <p>{email.body}</p>
-
-//       <div className="actions">
-//         {["Accept", "Reject", "Request Info", "Forward", "Custom Reply", "Acknowledge"].map((type) => (
-//           <button key={type} onClick={() => setModalType(type)}>
-//             {type}
-//           </button>
-//         ))}
-//       </div>
-
-//       {modalType && <ResponseModal type={modalType} onClose={() => setModalType(null)} />}
-//     </div>
-//   );
-// }
 
 import { useState, useEffect } from "react";
 import ResponseModal from "./ResponseModal";
@@ -37,7 +11,6 @@ export default function EmailDetails({ email }) {
 
   const token = localStorage.getItem("access");
 
-  // --- Generate AI Reply ---
   async function generateReply(choice) {
     setLoading(true);
     try {
@@ -63,7 +36,7 @@ export default function EmailDetails({ email }) {
     setLoading(false);
   }
 
-  // --- Send Reply ---
+
   async function sendReply(finalText) {
     setLoading(true);
     try {

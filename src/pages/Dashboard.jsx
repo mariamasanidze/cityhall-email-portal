@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
-import Inbox from "../components/Inbox";
+import Inbox from "../components/inbox";
 import EmailDetails from "../components/EmailDetails";
 import api from "../api";
 import "../App.css";
@@ -17,7 +17,7 @@ export default function Dashboard() {
         setLoading(true);
         setError(null);
         
-        // Debug: Check if token exists
+   
         const token = localStorage.getItem("access");
         console.log("🔑 Token exists:", !!token);
         console.log("📡 Fetching from:", api.defaults.baseURL + "/emails/");

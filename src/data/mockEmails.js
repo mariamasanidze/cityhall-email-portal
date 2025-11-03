@@ -23,10 +23,10 @@
 export const emails = [
   {
     id: 1,
-    from_email: "john.smith@example.com", // Changed from 'sender'
+    from_email: "john.smith@example.com",
     subject: "Request for Building Permit Extension",
     body: "Dear City Hall, I am writing to request an extension for my building permit #BP-2024-1234. Due to unexpected weather delays, we need an additional 30 days.",
-    processed_at: "2025-01-15T10:30:00Z", // Changed from 'date' to ISO format
+    processed_at: "2025-01-15T10:30:00Z", 
     priority: "High",
     status: "Pending",
   },

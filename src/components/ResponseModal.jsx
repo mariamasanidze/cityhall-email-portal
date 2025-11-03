@@ -1,23 +1,4 @@
-// import { useState } from "react";
 
-// export default function ResponseModal({ type, onClose }) {
-//   const [body, setBody] = useState(
-//     `Dear requester,\n\nYour ${type.toLowerCase()} request has been processed.\n\nBest regards,\nCity Hall`
-//   );
-
-//   return (
-//     <div className="modal-overlay">
-//       <div className="modal-box">
-//         <h3>{type} Response</h3>
-//         <textarea value={body} onChange={(e) => setBody(e.target.value)} />
-//         <div className="modal-buttons">
-//           <button onClick={() => setBody(body + "\n\n(Edited draft regenerated)")}>Regenerate</button>
-//           <button onClick={onClose}>Send Response</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 import { useState } from "react";
 
 export default function ResponseModal({ type, defaultText = "", onClose, onSend }) {

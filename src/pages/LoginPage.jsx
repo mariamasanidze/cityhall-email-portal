@@ -20,8 +20,7 @@ export default function LoginPage() {
       
       console.log("✅ Login successful!");
       console.log("📦 Response data:", data);
-      
-      // Verify tokens were stored
+    
       const storedAccess = localStorage.getItem("access");
       const storedRefresh = localStorage.getItem("refresh");
       
@@ -32,7 +31,7 @@ export default function LoginPage() {
         throw new Error("Access token was not saved to localStorage!");
       }
       
-      // Redirect to dashboard
+    
       window.location.href = "/dashboard";
       
     } catch (err) {
