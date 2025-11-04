@@ -30,8 +30,7 @@ export default function Header() {
 
       <div className="header-right">
   <div className="simple-buttons">
-    <button className="simple-btn">ქართ</button>
-    <button className="simple-btn">Log Out</button>
+    <button className="simple-btn">გასვლა</button>
   </div>
 </div>
 

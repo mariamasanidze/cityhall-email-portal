@@ -11,8 +11,8 @@
 .dash-layout {
   display: flex;
   height: calc(100vh - 70px);
+   
 }
-
 
 .dash-inbox-panel {
   width: 320px;
@@ -199,3 +199,4 @@
   background: #e0e7ff;
   border-color: #bfd0ff;
 }
+

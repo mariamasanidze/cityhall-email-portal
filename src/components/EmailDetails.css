@@ -1,0 +1,120 @@
+.email-details-container {
+  padding: 24px;
+  flex: 1;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.no-email-selected {
+  padding: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.email-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.status-chips {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.urgency-high { background:#ffe5e5; color:#c40000; }
+.urgency-medium { background:#fff5cc; color:#b88600; }
+.urgency-low { background:#d9f7d9; color:#0b7d00; }
+.chip.pending { background:#e8ebff; color:#4050ff; }
+
+
+.email-meta-box {
+  padding: 12px;
+  background: #f8f9fc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+.email-body-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  min-height: 120px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+
+.qa-btn {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  background: #fff;
+  transition: .2s;
+}
+
+.qa-btn:hover { background:#eef3ff; }
+
+.qa-btn.success { border-color:#3aa75e; color:#3aa75e; }
+.qa-btn.danger { border-color:#d96f6f; color:#c40000; }
+.qa-btn.info { border-color:#3f7db3; color:#005fa3; }
+.qa-btn.neutral { border-color:#aaa; color:#666; }
+
+.archive-btn {
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  color: #444;
+}
+.archive-btn:hover {
+  background:#ddd;
+}
+
+.urgency-pill {
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.urgency-high { background:#ffe1e1; border:1px solid #ffb3b3; color:#b10000; }
+.urgency-medium { background:#fff2c4; border:1px solid #e8c15a; color:#a07000; }
+.urgency-low { background:#dbf8db; border:1px solid #4fbf4f; color:#157e00; }

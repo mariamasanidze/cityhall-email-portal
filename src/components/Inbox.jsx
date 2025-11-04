@@ -37,38 +37,105 @@
 //lukas code 
 
 
+// import "../components/Inbox.css";
+// export default function Inbox({ emails, onSelectEmail, selectedEmailId }) {
+//   return (
+//     <div className="inbox-list-container">
+//       <div className="inbox-controls">
+//         <select className="inbox-filter">
+//           <option value="">All Status</option>
+//           <option value="pending">Pending</option>
+//           <option value="resolved">Resolved</option>
+//         </select>
+//       </div>
+
+//       <div className="inbox-items">
+//         {emails.map((email) => {
+//           const isActive = selectedEmailId === email.id;
+
+//           return (
+//             <div
+//               key={email.id}
+//               onClick={() => onSelectEmail(email)}
+//               className={`inbox-item ${isActive ? "active" : ""}`}
+//             >
+//               <div className="inbox-item-header">
+//                 <span className="inbox-sender">{email.from_email}</span>
+//                 <span className="inbox-date">
+//                   {new Date(email.processed_at).toLocaleDateString()}
+//                 </span>
+//               </div>
+
+//               <div className="inbox-subject">{email.subject}</div>
+
+//               {email.preview && (
+//                 <div className="inbox-preview">{email.preview}</div>
+//               )}
+
+//               {email.urgency && (
+//                 <div className="inbox-tags">
+//                   <span className={`tag tag-${email.urgency.toLowerCase()}`}>
+//                     {email.urgency}
+//                   </span>
+//                 </div>
+//               )}
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+import "../components/Inbox.css";
+
 export default function Inbox({ emails, onSelectEmail, selectedEmailId }) {
   return (
-    <div className="inbox-list">
-      <ul className="inbox-ul">
+    <div className="inbox-list-container">
+      <div className="inbox-controls">
+        <select className="inbox-filter">
+          <option value="">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="resolved">Resolved</option>
+        </select>
+      </div>
+
+      <div className="inbox-items">
         {emails.map((email) => {
           const isActive = selectedEmailId === email.id;
+
           return (
-            <li
+            <div
               key={email.id}
               onClick={() => onSelectEmail(email)}
-              className={`email-item ${isActive ? "active" : ""}`}
+              className={`inbox-item ${isActive ? "active" : ""}`}
             >
-              <div className="email-top-row">
-                <h4 className="email-from">{email.from_email}</h4>
-                <small className="email-date">
-                  {new Date(email.processed_at).toLocaleString()}
-                </small>
+             
+              <div className="inbox-item-header">
+                <span className="inbox-sender">{email.from_email}</span>
+                <span className="inbox-date">
+                  {new Date(email.processed_at).toLocaleDateString()}
+                </span>
               </div>
 
-              <p className="email-subject">{email.subject}</p>
+          
+              <div className="inbox-subject">{email.subject}</div>
+
+           
+              {email.preview && (
+                <div className="inbox-preview">{email.preview}</div>
+              )}
 
               {email.urgency && (
-                <div className="tags">
-                  <span className={`tag ${email.urgency.toLowerCase()}`}>
+                <div className="inbox-tags">
+                  <span className={`urgency-pill urgency-${email.urgency.toLowerCase()}`}>
                     {email.urgency}
                   </span>
                 </div>
               )}
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

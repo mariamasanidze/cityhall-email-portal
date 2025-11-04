@@ -1,0 +1,138 @@
+
+
+.inbox-list-container {
+  width: 100%;
+  border-right: 1px solid #dcdcdc;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  height: 100vh;
+}
+
+
+.inbox-controls {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.inbox-filter {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccd5e1;
+  border-radius: 12px;
+  background: #f8faff;
+  font-size: 14px;
+  outline: none;
+}
+
+.inbox-filter:focus {
+  border-color: #468af8;
+  box-shadow: 0 0 0 2px rgba(70, 138, 248, 0.28);
+}
+
+
+.inbox-items {
+  overflow-y: auto;
+  height: 100%;
+}
+
+
+.inbox-item {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.15s ease;
+  background: #fff;
+}
+
+.inbox-item:hover {
+  background: #eef3ff;
+}
+
+.inbox-item.active {
+  background: #e7f0ff;
+  border-left: 4px solid #0074E0;
+}
+
+
+.inbox-item-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inbox-sender {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.inbox-date {
+  font-size: 12px;
+  color: #666;
+}
+
+
+.inbox-subject {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.inbox-preview {
+  font-size: 12px;
+  margin-top: 3px;
+  color: #6d6d6d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.urgency-pill {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+
+.urgency-მაღალი {
+  background: #ffe1e1;
+  border: 1px solid #ffb3b3;
+  color: #b10000;
+}
+.urgency-საშუალო {
+  background: #fff2c4;
+  border: 1px solid #e8c15a;
+  color: #a07000;
+}
+
+.urgency-დაბალი {
+  background: #dbf8db;
+  border: 1px solid #4fbf4f;
+  color: #157e00;
+}
+
+.inbox-items::-webkit-scrollbar { width: 8px; }
+.inbox-items::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+ 
+.inbox-list-container {
+  overflow-x: hidden; 
+}
+.inbox-items {
+  overflow-x: hidden;
+}
