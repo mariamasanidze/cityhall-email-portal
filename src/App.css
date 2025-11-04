@@ -1,0 +1,227 @@
+/* body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #eef2f9;
+}
+
+.header {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.inbox {
+  width: 30%;
+  border-right: 1px solid #ddd;
+  background: #fff;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.inbox ul {
+  list-style: none;
+  padding: 0;
+}
+
+.inbox li {
+  border-bottom: 1px solid #eee;
+  padding: 0.75rem 0;
+  cursor: pointer;
+}
+
+.inbox li:hover {
+  background: #f7f9fc;
+}
+
+.email-details {
+  width: 70%;
+  background: white;
+  padding: 2rem;
+}
+
+.actions button {
+  margin: 0.4rem;
+  background: #f1f3f8;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #e0e7ff;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 2rem;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.modal-box textarea {
+  width: 100%;
+  height: 200px;
+  margin: 1rem 0;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-right: 4px;
+}
+.tag.high { background: #fde68a; }
+.tag.urgent { background: #fca5a5; }
+.tag.pending { background: #fee2e2; }
+
+.tag {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 5px;
+  color: white;
+  font-weight: 600;
+}
+
+/* Status tags */
+/* .tag.pending {
+  background-color: orange;
+}
+
+.tag.completed {
+  background-color: green;
+}
+
+/* Priority tags */
+/* .tag.high {
+  background-color: red;
+} */
+
+/* .tag.normal {
+  background-color: gray;
+} */
+
+/* .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.modal-box {
+  width: 500px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-box textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.send-btn {
+  background: green;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.cancel-btn {
+  background: gray;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+} */ 
+
+
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #eef2f9;
+}
+
+
+.header {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.modal-box textarea {
+  width: 100%;
+  height: 200px;
+  margin: 10px 0;
+  border-radius: 6px;
+  padding: 10px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.send-btn {
+  background: green;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.cancel-btn {
+  background: gray;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}

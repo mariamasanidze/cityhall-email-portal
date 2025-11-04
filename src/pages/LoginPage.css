@@ -1,0 +1,130 @@
+
+
+
+.login-bg {
+  height: 100vh;
+  width: 100%;
+  background: #08224c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+
+.ui-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeUp 0.4s ease;
+}
+
+
+.login-logo img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+
+.ui-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0b2447;
+}
+
+.ui-subtitle {
+  font-size: 14px;
+  color: #667a94;
+  margin-bottom: 26px;
+}
+
+.ui-error {
+  background: #ffe6e6;
+  color: #b60000;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ffbcbc;
+}
+
+
+.ui-form {
+  width: 100%;
+}
+
+
+.ui-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f2f6ff;
+  border: 1px solid #d9e3ff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+
+.ui-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+
+.ui-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+
+.ui-button {
+  width: 100%;
+  padding: 12px;
+  background: #0b162e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 5px;
+}
+
+.ui-button:hover:not(:disabled) {
+  background: #020a1d;
+}
+
+.ui-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ui-demo-box {
+  background: #f6f9ff;
+  padding: 12px;
+  margin-top: 22px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #dfe7ff;
+  text-align: left;
+}
+
+.ui-demo-box ul {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
