@@ -225,3 +225,33 @@ body {
   padding: 8px 14px;
   border-radius: 6px;
 }
+
+
+
+
+
+/* response modal css */
+
+.sent-to-btn {
+  background-color: #043506;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-pdf-link {
+  color: #054080;
+   text-decoration: underline;
+    cursor: pointer;
+} 
+
+
+.textarea-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+

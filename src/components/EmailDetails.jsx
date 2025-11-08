@@ -1,96 +1,18 @@
 
-
-// //lukas code
-
-// import { useState } from "react";
-// import ResponseModal from "./ResponseModal";
-// import { generateReply, sendReply } from "../api";
-
-// export default function EmailDetails({ email }) {
-//   const [modalType, setModalType] = useState(null);
-//   const [replyText, setReplyText] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   if (!email) {
-//     return (
-//       <div className="dash-center-msg">
-//         Select an email to view details
-//       </div>
-//     );
-//   }
-
-//   async function handleGenerateReply(choice) {
-//     setLoading(true);
-//     try {
-//       const data = await generateReply(email.id, choice);
-//       setReplyText(data.gpt_generated_reply);
-//       setModalType("reply");
-//     } catch (err) {
-//       console.error("Generate reply error:", err);
-//       alert(err.message);
-//     } finally {
-//       setLoading(false);
-//     }
-//   }
-
-//   async function handleSendReply(finalText) {
-//     setLoading(true);
-//     try {
-//       await sendReply(email.id, finalText);
-//       alert("Reply Sent ✅");
-//       setModalType(null);
-//     } catch (err) {
-//       console.error("Send reply error:", err);
-//       alert(err.message);
-//     } finally {
-//       setLoading(false);
-//     }
-//   }
-
-//   return (
-//     <div className="email-details">
-//       <h2 className="email-title">{email.subject}</h2>
-//       <div className="email-meta">
-//         <p><strong>From:</strong> {email.from_email}</p>
-//         <p><strong>Date:</strong> {email.date_str}</p>
-//       </div>
-//       <hr />
-//       <div className="email-body">{email.text_body}</div>
-
-//       <div className="actions">
-//         <button onClick={() => handleGenerateReply("Yes")} disabled={loading}>
-//           Generate 'Yes' Reply
-//         </button>
-//         <button onClick={() => handleGenerateReply("No")} disabled={loading}>
-//           Generate 'No' Reply
-//         </button>
-//         <button onClick={() => setModalType("custom")} disabled={loading}>
-//           Write Custom Reply
-//         </button>
-//       </div>
-
-//       {modalType && (
-//         <ResponseModal
-//           type={modalType}
-//           defaultText={replyText}
-//           onClose={() => setModalType(null)}
-//           onSend={handleSendReply}
-//         />
-//       )}
-//     </div>
-//   );
-// }
-
-
 import "../components/EmailDetails.css";
 import { useState } from "react";
 import ResponseModal from "./ResponseModal";
 import { generateReply, sendReply } from "../api";
+import SuccessPopup from "./SuccessPopup";
+import SendBackModal from "./SendBackModal";
 
 export default function EmailDetails({ email }) {
   const [modalType, setModalType] = useState(null);
   const [replyText, setReplyText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showSendBack, setShowSendBack] = useState(false);
 
   if (!email) {
     return <div className="no-email-selected">Select an email to view details</div>;
@@ -114,7 +36,8 @@ export default function EmailDetails({ email }) {
     setLoading(true);
     try {
       await sendReply(email.id, finalText);
-      alert("Reply Sent ✅");
+      setPopupMessage("Reply Sent ");
+      setShowPopup(true);
       setModalType(null);
     } catch (err) {
       console.error("Send reply error:", err);
@@ -122,6 +45,32 @@ export default function EmailDetails({ email }) {
     } finally {
       setLoading(false);
     }
+  }
+  async function handleSentTo(finalText) {
+    setLoading(true);
+    try {
+      console.log("Sent to Mayor with message:", finalText);
+      setPopupMessage("გაგზავნილია მერთან ");
+      setShowPopup(true);
+      setModalType(null);
+    } catch (err) {
+      console.error("SentTo error:", err);
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleSendBackSubmit(data) {
+    console.log("Send Back Data:", data);
+    setShowSendBack(false);
+    setPopupMessage("Email Sent Back ");
+    setShowPopup(true);
+  }
+
+  function handleArchive() {
+    setPopupMessage("Email Archived 📦");
+    setShowPopup(true);
   }
 
   return (
@@ -155,22 +104,14 @@ export default function EmailDetails({ email }) {
           Custom Reply
         </button>
 
-        <button className="qa-btn neutral" disabled>
-          Forward
+        <button className="qa-btn neutral" onClick={() => setShowSendBack(true)} disabled={loading}>
+          Send Back
         </button>
 
-        <button className="qa-btn neutral" disabled>
-          Acknowledge
-        </button>
-
-        <button className="qa-btn neutral" disabled>
-          Request Info
+        <button className="qa-btn neutral" onClick={handleArchive} disabled={loading}>
+          Archive Email
         </button>
       </div>
-
-      <button className="archive-btn" disabled>
-        Archive Email
-      </button>
 
       {modalType && (
         <ResponseModal
@@ -178,6 +119,21 @@ export default function EmailDetails({ email }) {
           defaultText={replyText}
           onClose={() => setModalType(null)}
           onSend={handleSendReply}
+          onSentTo={handleSentTo} 
+        />
+      )}
+
+      {showSendBack && (
+        <SendBackModal
+          onClose={() => setShowSendBack(false)}
+          onSendBack={handleSendBackSubmit}
+        />
+      )}
+
+      {showPopup && (
+        <SuccessPopup
+          message={popupMessage}
+          onClose={() => setShowPopup(false)}
         />
       )}
     </div>
