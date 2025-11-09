@@ -100,8 +100,8 @@ export default function EmailDetails({ email }) {
           Reject
         </button>
 
-        <button className="qa-btn info" onClick={() => setModalType("custom")} disabled={loading}>
-          Custom Reply
+        <button className="qa-btn info" onClick={() => {setReplyText(""); setModalType("custom"); }} disabled={loading}>
+         Custom Reply
         </button>
 
         <button className="qa-btn neutral" onClick={() => setShowSendBack(true)} disabled={loading}>
